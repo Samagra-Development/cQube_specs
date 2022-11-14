@@ -1,0 +1,107 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Event Specifications",
+    "required": [
+        "adapterConfigs",
+        "dimensions",
+        "items"
+    ],
+    "properties": {
+        "adapterConfigs": {
+            "type": "object",
+            "default": {},
+            "title": "The adapterConfigs schema",
+            "required": [],
+            "properties": {},
+            "examples": [
+                {}
+            ]
+        },
+        "dimensions": {
+            "type": "array",
+            "default": [],
+            "title": "The dimensions schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "Properties to map dimensions",
+                "required": [
+                    "id",
+                    "key"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The dimension table id",
+                        "examples": [
+                            "D1"
+                        ]
+                    },
+                    "key": {
+                        "type": "string",
+                        "default": "",
+                        "title": "Primary key of dimension table",
+                        "examples": [
+                            "schoolId"
+                        ]
+                    }
+                },
+                "examples": [
+                    {
+                        "id": "D1",
+                        "key": "schoolId"
+                    }
+                ]
+            },
+            "examples": [
+                [
+                    {
+                        "id": "D1",
+                        "key": "schoolId"
+                    }
+                ]
+            ]
+        },
+        "items": {
+            "type": "object",
+            "default": {},
+            "title": "The items schema",
+            "required": [
+                "examType"
+            ],
+            "properties": {
+                "examType": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The examType schema",
+                    "examples": [
+                        "Periodic Assessment"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "examType": "Periodic Assessment"
+                }
+            ]
+        }
+    },
+    "examples": [
+        {
+            "adapterConfigs": {},
+            "dimensions": [
+                {
+                    "id": "D1",
+                    "key": "schoolId"
+                }
+            ],
+            "items": {
+                "examType": "Periodic Assessment"
+            }
+        }
+    ]
+}
