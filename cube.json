@@ -4,6 +4,7 @@
     "type": "object",
     "default": {},
     "title": "Cube Specifications",
+    "kpiId": "",
     "required": [
         "events",
         "dimensions",
@@ -18,7 +19,7 @@
             "properties": {},
             "examples": [
                 {
-                    "exam_type": "Periodic Assessment"
+                    "examType": "Periodic Assessment"
                 }
             ]
         },
@@ -55,7 +56,7 @@
                 "examples": [
                     {
                         "id": "D1",
-                        "key": "school_id"
+                        "key": "schoolId"
                     }
                 ]
             },
@@ -63,7 +64,7 @@
                 [
                     {
                         "id": "D1",
-                        "key": "school_id"
+                        "key": "schoolId"
                     }
                 ]
             ]
@@ -101,7 +102,7 @@
                 "examples": [
                     {
                         "id": "AVERAGE",
-                        "key": "student_attendance"
+                        "key": "studentAttendance"
                     }
                 ]
             },
@@ -109,7 +110,7 @@
                 [
                     {
                         "id": "AVERAGE",
-                        "key": "student_attendance"
+                        "key": "studentAttendance"
                     }
                 ]
             ]
@@ -118,18 +119,18 @@
     "examples": [
         {
             "events": {
-                "exam_type": "Periodic Assessment"
+                "examType": "Periodic Assessment"
             },
             "dimensions": [
                 {
                     "id": "D1",
-                    "key": "school_id"
+                    "key": "schoolId"
                 }
             ],
             "aggregates": [
                 {
                     "id": "AVERAGE",
-                    "key": "student_attendance"
+                    "key": "studentAttendance"
                 }
             ]
         }
