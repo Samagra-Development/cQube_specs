@@ -1,0 +1,137 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Cube Specifications",
+    "required": [
+        "events",
+        "dimensions",
+        "aggregates"
+    ],
+    "properties": {
+        "events": {
+            "type": "object",
+            "default": {},
+            "title": "The events schema",
+            "required": [],
+            "properties": {},
+            "examples": [
+                {
+                    "exam_type": "Periodic Assessment"
+                }
+            ]
+        },
+        "dimensions": {
+            "type": "array",
+            "default": [],
+            "title": "The dimensions schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "Properties to map dimensions",
+                "required": [
+                    "id",
+                    "key"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The dimension table id",
+                        "examples": [
+                            ""
+                        ]
+                    },
+                    "key": {
+                        "type": "string",
+                        "default": "",
+                        "title": "Primary key of dimension table",
+                        "examples": [
+                            ""
+                        ]
+                    }
+                },
+                "examples": [
+                    {
+                        "id": "D1",
+                        "key": "school_id"
+                    }
+                ]
+            },
+            "examples": [
+                [
+                    {
+                        "id": "D1",
+                        "key": "school_id"
+                    }
+                ]
+            ]
+        },
+        "aggregates": {
+            "type": "array",
+            "default": [],
+            "title": "The aggregates schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "Properties describing the aggregate functions on the cube",
+                "required": [
+                    "id",
+                    "key"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The id schema",
+                        "examples": [
+                            ""
+                        ]
+                    },
+                    "key": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The key schema",
+                        "examples": [
+                            ""
+                        ]
+                    }
+                },
+                "examples": [
+                    {
+                        "id": "AVERAGE",
+                        "key": "student_attendance"
+                    }
+                ]
+            },
+            "examples": [
+                [
+                    {
+                        "id": "AVERAGE",
+                        "key": "student_attendance"
+                    }
+                ]
+            ]
+        }
+    },
+    "examples": [
+        {
+            "events": {
+                "exam_type": "Periodic Assessment"
+            },
+            "dimensions": [
+                {
+                    "id": "D1",
+                    "key": "school_id"
+                }
+            ],
+            "aggregates": [
+                {
+                    "id": "AVERAGE",
+                    "key": "student_attendance"
+                }
+            ]
+        }
+    ]
+}
