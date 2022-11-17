@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "KPI Specifications",
+    "required": [
+        "cubeId"
+    ],
+    "properties": {
+        "cubeId": {
+            "type": "string",
+            "default": "",
+            "title": "Cube Id from which KPI is mapped",
+            "examples": [
+                "c1"
+            ]
+        }
+    },
+    "examples": [
+        {
+            "cubeId": "c1"
+        }
+    ]
+}
