@@ -3,7 +3,7 @@
     "$id": "http://example.com/example.json",
     "type": "object",
     "default": {},
-    "title": "Cube Specifications",
+    "title": "Dataset Specifications",
     "kpiId": "",
     "required": [
         "events",
@@ -76,7 +76,7 @@
             "items": {
                 "type": "object",
                 "default": {},
-                "title": "Properties describing the aggregate functions on the cube",
+                "title": "Properties describing the aggregate functions on the datasets",
                 "required": [
                     "id",
                     "key"
