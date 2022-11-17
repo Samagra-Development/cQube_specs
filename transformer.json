@@ -12,7 +12,122 @@
     ],
     "properties": {
         "events": {
+            "type": "object",{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Transformer Specifications",
+    "required": [
+        "events",
+        "dimensions",
+        "datasetId",
+        "operation"
+    ],
+    "properties": {
+        "events": {
             "type": "object",
+            "default": {},
+            "title": "The events Schema (source)",
+            "required": [
+                "examType"
+            ],
+            "properties": {
+                "examType": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The examType Schema",
+                    "examples": [
+                        "Periodic Assessment"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "examType": "Periodic Assessment"
+                }
+            ]
+        },
+        "dimensions": {
+            "type": "array",
+            "default": [],
+            "title": "The dimensions Schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "id",
+                    "key"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The id Schema",
+                        "examples": [
+                            "D1"
+                        ]
+                    },
+                    "key": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The key Schema",
+                        "examples": [
+                            "schoolId"
+                        ]
+                    }
+                },
+                "examples": [
+                    {
+                        "id": "D1",
+                        "key": "schoolId"
+                    }
+                ]
+            },
+            "examples": [
+                [
+                    {
+                        "id": "D1",
+                        "key": "schoolId"
+                    }
+                ]
+            ]
+        },
+        "datasetId": {
+            "type": "string",
+            "default": "",
+            "title": "Dataset Id (destination)",
+            "examples": [
+                "c1"
+            ]
+        },
+        "operation": {
+            "type": "string",
+            "default": "",
+            "title": "Function or operation to perform transformation",
+            "examples": [
+                ""
+            ]
+        }
+    },
+    "examples": [
+        {
+            "events": {
+                "examType": "Periodic Assessment"
+            },
+            "dimensions": [
+                {
+                    "id": "D1",
+                    "key": "schoolId"
+                }
+            ],
+            "datasetId": "c1",
+            "operation": ""
+        }
+    ]
+}
+
             "default": {},
             "title": "The events Schema (source)",
             "required": [
