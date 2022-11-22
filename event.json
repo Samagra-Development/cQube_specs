@@ -13,7 +13,7 @@
         "adapterConfigs": {
             "type": "object",
             "default": {},
-            "title": "The adapterConfigs schema",
+            "title": "The adapterConfigs Schema",
             "required": [],
             "properties": {},
             "examples": [
@@ -23,7 +23,7 @@
         "dimensions": {
             "type": "array",
             "default": [],
-            "title": "The dimensions schema",
+            "title": "The dimensions Schema",
             "items": {
                 "type": "object",
                 "default": {},
@@ -69,23 +69,140 @@
         "items": {
             "type": "object",
             "default": {},
-            "title": "The items schema",
+            "title": "The items Schema",
             "required": [
-                "examType"
+                "metadata",
+                "rows"
             ],
             "properties": {
-                "examType": {
-                    "type": "string",
-                    "default": "",
-                    "title": "The examType schema",
+                "metadata": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The metadata Schema",
+                    "required": [
+                        "schoolId",
+                        "gradeId",
+                        "count"
+                    ],
+                    "properties": {
+                        "schoolId": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The schoolId Schema",
+                            "examples": [
+                                "number"
+                            ]
+                        },
+                        "gradeId": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The gradeId Schema",
+                            "examples": [
+                                "number"
+                            ]
+                        },
+                        "count": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The count Schema",
+                            "examples": [
+                                "number"
+                            ]
+                        }
+                    },
                     "examples": [
-                        "Periodic Assessment"
+                        {
+                            "schoolId": "number",
+                            "gradeId": "number",
+                            "count": "number"
+                        }
+                    ]
+                },
+                "rows": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The rows Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "schoolId",
+                            "gradeId",
+                            "count"
+                        ],
+                        "properties": {
+                            "schoolId": {
+                                "type": "string",
+                                "title": "The schoolId Schema",
+                                "examples": [
+                                    "101",
+                                    "102"
+                                ]
+                            },
+                            "gradeId": {
+                                "type": "string",
+                                "title": "The gradeId Schema",
+                                "examples": [
+                                    "1",
+                                    "2"
+                                ]
+                            },
+                            "count": {
+                                "type": "string",
+                                "title": "The count Schema",
+                                "examples": [
+                                    "20"
+                                ]
+                            }
+                        },
+                        "examples": [
+                            {
+                                "schoolId": "101",
+                                "gradeId": "1",
+                                "count": "20"
+                            },
+                            {
+                                "schoolId": "102",
+                                "gradeId": "2",
+                                "count": "20"
+                            }
+                        ]
+                    },
+                    "examples": [
+                        [
+                            {
+                                "schoolId": "101",
+                                "gradeId": "1",
+                                "count": "20"
+                            },
+                            {
+                                "schoolId": "102",
+                                "gradeId": "2",
+                                "count": "20"
+                            }
+                        ]
                     ]
                 }
             },
             "examples": [
                 {
-                    "examType": "Periodic Assessment"
+                    "metadata": {
+                        "schoolId": "number",
+                        "gradeId": "number",
+                        "count": "number"
+                    },
+                    "rows": [
+                        {
+                            "schoolId": "101",
+                            "gradeId": "1",
+                            "count": "20"
+                        },
+                        {
+                            "schoolId": "102",
+                            "gradeId": "2",
+                            "count": "20"
+                        }
+                    ]
                 }
             ]
         }
@@ -100,8 +217,39 @@
                 }
             ],
             "items": {
-                "examType": "Periodic Assessment"
+                "metadata": {
+                    "schoolId": "number",
+                    "gradeId": "number",
+                    "count": "number"
+                },
+                "rows": [
+                    {
+                        "schoolId": "101",
+                        "gradeId": "1",
+                        "count": "20"
+                    },
+                    {
+                        "schoolId": "102",
+                        "gradeId": "2",
+                        "count": "20"
+                    }
+                ]
             }
         }
     ]
 }
+
+// EVENT
+// schoolId | gradeId | count
+// 101      | 1       | 20
+// 102      | 2       | 20
+// 103      | 3       | 20
+// 104      | 4       | 20
+// 101      | 2       | 20
+
+// DIMENSION - D1
+// schoolId | name | location
+// 101      | ABC  | Delhi
+// 102      | XYZ  | Delhi
+// 103      | PQR  | Delhi
+// 104      | RST  | Delhi
