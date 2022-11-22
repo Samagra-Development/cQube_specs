@@ -217,7 +217,7 @@
                 }
             ],
             "items": {
-                "metadata": {
+                "metaData": {
                     "schoolId": "number",
                     "gradeId": "number",
                     "count": "number"
